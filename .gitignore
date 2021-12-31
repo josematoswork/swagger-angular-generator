@@ -40,3 +40,5 @@ dist/
 
 # generated code dir
 generated/
+generated-dreampay/
+swagger-files/dreampay.json

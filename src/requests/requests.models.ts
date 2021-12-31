@@ -1,4 +1,4 @@
-import {HttpResponse, Method, MethodName, Parameter} from '../types';
+import { HttpResponse, Method, MethodName, Parameter } from "../types";
 
 export interface Paths {
   [key: string]: {
@@ -6,9 +6,9 @@ export interface Paths {
   };
 }
 
-export type MethodOrParameters =
-  {[key in MethodName]?: Method} &
-  {parameters: Parameter[]};
+export type MethodOrParameters = { [key in MethodName]?: Method } & {
+  parameters: Parameter[];
+};
 
 export interface PathsWithParameters {
   [key: string]: MethodOrParameters;
@@ -28,6 +28,7 @@ export interface ControllerMethod {
   summary: string;
   operationId: string;
   description: string;
+  method: Method;
   methodName: MethodName;
   simpleName: string;
   name: string;
