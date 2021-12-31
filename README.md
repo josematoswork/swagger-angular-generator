@@ -24,10 +24,9 @@ Generate minimalistic TypeScript API layer for Angular with full type reflection
 - so that the server responses can be reached in the redux store
 - requests can be triggered by dispatching an action
 
-
 ## Install
 
-`npm i @jmw/swagger-angular-generator --save-dev`
+`npm i jmw-swagger-angular-generator --save-dev`
 
 ## Options
 
@@ -46,20 +45,20 @@ Generate minimalistic TypeScript API layer for Angular with full type reflection
 1. save it to json file in input directory and optionally **format** it for better diff
 1. run via
 
-   1. **directly** `./node_modules/.bin/swagger-angular-generator`
-   1. **as module** `swagger-angular-generator` package, `npm run generate`
+   1. **directly** `./node_modules/.bin/jmw-swagger-angular-generator`
+   1. **as module** `jmw-swagger-angular-generator` package, `npm run generate`
       ```javascript
       "script": {
-        "generate": "swagger-angular-generator -s src/api/scheme.json -d src/api/generated"
+        "generate": "jmw-swagger-angular-generator -s src/api/scheme.json -d src/api/generated"
         ...
       }
       ```
    1. or **programatically** as a method invocation
 
       ```typescript
-      import { generate } from "swagger-angular-generator";
+      import { generate } from "jmw-swagger-angular-generator";
       // or using CommonJS loader
-      const { generate } = require("swagger-angular-generator");
+      const { generate } = require("jmw-swagger-angular-generator");
 
       generate("conf/api/api-docs.json", "src/api");
       ```
@@ -342,8 +341,6 @@ ngOnInit() {
 
 - at least Node.js 8 is needed
 - this project is based on swagger-angular-generator (https://github.com/jnwltr/swagger-angular-generator), so it could not exist without the initial help of Jan Walter
-
-
 
 ### _Pull requests are welcome!_
 
