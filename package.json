@@ -1,6 +1,6 @@
 {
   "name": "jmw-swagger-angular-generator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Generator of API layer in TypeScript for Angular apps",
   "main": "dist/generate.js",
   "types": "dist/generate.d.ts",
