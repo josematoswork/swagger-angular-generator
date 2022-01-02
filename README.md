@@ -1,6 +1,6 @@
 ## Purpose
 
-Generate minimalistic TypeScript API layer for Angular with full type reflection of backend model.
+Generate minimalistic TypeScript API layer for Angular 12 apps with full type reflection of backend model.
 
 - Source: [swagger scheme](https://swagger.io/specification/)
 - Destination: [Angular-cli](https://cli.angular.io/) based [Angular](https://angular.io/) app.
@@ -9,7 +9,7 @@ Generate minimalistic TypeScript API layer for Angular with full type reflection
 
 ### Services for back-end / API communication
 
-- connect to your API in no-time
+- connect to your API in no-time (also works for C# .Net Core Web API's)
 
 ### Interfaces
 
@@ -340,7 +340,7 @@ ngOnInit() {
 ## Development
 
 - at least Node.js 8 is needed
-- this project is based on swagger-angular-generator (https://github.com/jnwltr/swagger-angular-generator), so it could not exist without the initial help of Jan Walter
+- this project was initially based on swagger-angular-generator (https://github.com/jnwltr/swagger-angular-generator), so it could not exist without the initial help of Jan Walter
 
 ### _Pull requests are welcome!_
 
