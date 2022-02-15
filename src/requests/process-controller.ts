@@ -82,6 +82,7 @@ export function processController(
 
   content += "import {Injectable} from '@angular/core';\n";
   content += "import {Observable} from 'rxjs';\n\n";
+  content += "import {environment} from 'src/environments/environment';\n\n";
 
   if (usesGlobalType) {
     content += `import * as __${conf.modelFile} from \'../${conf.modelFile}\';\n\n`;
