@@ -28,13 +28,20 @@ Generate minimalistic TypeScript API layer for Angular 12 apps with full type re
 
 `npm i jmw-swagger-angular-generator --save-dev`
 
+Add apiUrl key to your environment files pointing to your api. Example: apiUrl: 'https://api.example.com'
+
 ## Options
 
 `-h` - show help
+
 `-s`, `--src` - source directory
+
 `-d`, `--dest` - destination directory, default: `src/api`
+
 `--no-store` - do not generate the ngrx modules
+
 `-u, --swagger-URL-path` - swagger URL path, where the swagger ui documentation can be found; default: `/swagger`, i.e. the resulting address would be `http://example/swagger`
+
 `-o, --omit-version` - disables API version information to be generated in comments for each file
 
 ## Use
@@ -209,7 +216,7 @@ export class ExampleModule {}
 
 ##### Component (created by you)
 
-In the component, send the above created form via `sendForm()` method. Notice the way a generated anction is dispatched.
+In the component, send the above created form via `sendForm()` method. Notice the way a generated action is dispatched.
 
 ```typescript
 import { Component, OnDestroy } from "@angular/core";
@@ -332,20 +339,4 @@ ngOnInit() {
    The http methods are grouped to services based on the tags, i.e. if two methods have tag "order", both will be
    generated inside Order.ts
 1. `get` and `delete` methods do not contain `body`
-1. swagger file should contain values for the keys `host` and `basePath` so that each generated service method can contain a link to the swagger UI method reference, e.g. `http://example.com/swagger/swagger-ui.html#!/Order/Order`
 1. `definitions` section in swagger file does not contain types with inline definitions, i.e. only named subtypes work
-
-#### Usage of NGRX modules
-
-## Development
-
-- at least Node.js 8 is needed
-- this project was initially based on swagger-angular-generator (https://github.com/jnwltr/swagger-angular-generator), so it could not exist without the initial help of Jan Walter
-
-### _Pull requests are welcome!_
-
-Please do the following before making a PR:
-
-1. Build the app and regenerate testing files via `npm run build`.
-1. Check test pass via `npm test`.
-1. Check files lint via `npm run lint`.

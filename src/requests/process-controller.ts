@@ -69,7 +69,12 @@ export function processController(
 
   let content = "";
 
-  const angularCommonHttp = ["HttpClient"];
+  const angularCommonHttp = [
+    "HttpClient",
+    "HttpEvent",
+    "HttpHeaders",
+    "HttpRequest",
+  ];
   if (processedMethods.some((c) => "header" in c.paramGroups)) {
     angularCommonHttp.push("HttpHeaders");
   }
@@ -81,7 +86,7 @@ export function processController(
   )}} from \'@angular/common/http\';\n`;
 
   content += "import {Injectable} from '@angular/core';\n";
-  content += "import {Observable} from 'rxjs';\n\n";
+  content += "import {Observable} from 'rxjs';\n";
   content += "import {environment} from 'src/environments/environment';\n\n";
 
   if (usesGlobalType) {
@@ -98,6 +103,12 @@ export function processController(
 
   content += `@Injectable()\n`;
   content += `export class ${name}Service {\n`;
+
+  content += indent(
+    `headers = new HttpHeaders({ "Content-Type": "application/json" });`
+  );
+  content += "\n\n";
+
   content += indent("constructor(private http: HttpClient) {}");
   content += "\n";
   content += indent(_.map(processedMethods, "methodDef").join("\n\n"));

@@ -238,6 +238,8 @@ function getRequestParams(paramTypes: ParamLocation[], methodName: string) {
   if (paramTypes.includes("header")) {
     optionParams.push("headers: headerParams");
   }
+  // force headers
+  optionParams.push("headers: this.headers");
 
   if (optionParams.length) res += `, {${optionParams.join(", ")}}`;
 
